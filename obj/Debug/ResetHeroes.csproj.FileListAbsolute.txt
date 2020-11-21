@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Steam\steamapps\common\Mount & Blade II Bannerlord\Modules\ResetHeroes\bin\Win64_Shipping_Client\ResetHeroes.dll
+C:\Program Files (x86)\Steam\steamapps\common\Mount & Blade II Bannerlord\Modules\ResetHeroes\bin\Win64_Shipping_Client\ResetHeroes.pdb
+C:\Users\Alex\Documents\vsProjects\MountAndBladeMods\ResetHeroes\obj\Debug\ResetHeroes.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\vsProjects\MountAndBladeMods\ResetHeroes\obj\Debug\ResetHeroes.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\vsProjects\MountAndBladeMods\ResetHeroes\obj\Debug\ResetHeroes.csproj.CopyComplete
+C:\Users\Alex\Documents\vsProjects\MountAndBladeMods\ResetHeroes\obj\Debug\ResetHeroes.dll
+C:\Users\Alex\Documents\vsProjects\MountAndBladeMods\ResetHeroes\obj\Debug\ResetHeroes.pdb

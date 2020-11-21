@@ -9,9 +9,8 @@ namespace ResetHeroes
 {
     public static class ResetHeroesFunctions
     {
-		public static void ResetMainHero()
+		public static void ResetHero(Hero hero)
 		{
-			Hero hero = Hero.MainHero;
 			hero.HeroDeveloper.ClearHero();
 
 			PropertyInfo propertyInfo = typeof(HeroDeveloper).GetProperty("TotalXp");
