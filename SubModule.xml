@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+	<Name value = "ResetHeroes"/>
+	<Id value = "ResetHeroes"/>
+	<Version value = "v1.0.0"/>
+	<DefaultModule value="false"/>	
+	<SingleplayerModule value="true"/>
+  <Official value="false" />
+  <DependedModules>
+		<DependedModule Id="Native"/>
+		<DependedModule Id="SandBoxCore"/>
+	</DependedModules>
+	<SubModules>
+		<SubModule>
+			<Name value = "ResetHeroes"/>
+			<DLLName value = "ResetHeroes.dll"/>	
+			<SubModuleClassType value = "ResetHeroes.ResetHeroesSubModule"/>				
+			<Tags>
+			</Tags>			
+		</SubModule>
+	</SubModules>
+	<Xmls>
+	</Xmls>
+</Module>
