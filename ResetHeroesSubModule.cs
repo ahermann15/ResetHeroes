@@ -5,5 +5,9 @@ namespace ResetHeroes
 {
     public class ResetHeroesSubModule : MBSubModuleBase
     {
+        protected override void OnSubModuleLoad()
+        {
+
+        }
     }
 }
