@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-	<Name value = "ResetHeroes"/>
-	<Id value = "ResetHeroes"/>
-	<Version value = "v1.0.0"/>
+	<Name value = "ResetAndReallocateHeroes"/>
+	<Id value = "ResetAndReallocateHeroes"/>
+	<Version value = "v1.1.0"/>
 	<DefaultModule value="false"/>	
 	<SingleplayerModule value="true"/>
   <Official value="false" />
@@ -12,9 +12,9 @@
 	</DependedModules>
 	<SubModules>
 		<SubModule>
-			<Name value = "ResetHeroes"/>
-			<DLLName value = "ResetHeroes.dll"/>	
-			<SubModuleClassType value = "ResetHeroes.ResetHeroesSubModule"/>				
+			<Name value = "ResetAndReallocateHeroes"/>
+			<DLLName value = "ResetAndReallocateHeroes.dll"/>	
+			<SubModuleClassType value = "ResetAndReallocateHeroes.ResetAndReallocateHeroesSubModule"/>				
 			<Tags>
 			</Tags>			
 		</SubModule>

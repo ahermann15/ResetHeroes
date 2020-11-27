@@ -7,8 +7,8 @@
     <ProjectGuid>{4B99196D-FD3E-4591-A038-4317A59F088E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ResetHeroes</RootNamespace>
-    <AssemblyName>ResetHeroes</AssemblyName>
+    <RootNamespace>ResetAndReallocateHeroes</RootNamespace>
+    <AssemblyName>ResetAndReallocateHeroes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\ResetHeroes\bin\Win64_Shipping_Client\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\ResetAndReallocateHeroes\bin\Win64_Shipping_Client\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -183,8 +183,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResetHeroesFunctions.cs" />
-    <Compile Include="ResetHeroesSubModule.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="SubModule.cs" />
     <Compile Include="ConsoleCommands.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
