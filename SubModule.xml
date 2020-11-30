@@ -2,7 +2,7 @@
 <Module>
 	<Name value = "ResetAndReallocateHeroes"/>
 	<Id value = "ResetAndReallocateHeroes"/>
-	<Version value = "v1.1.0"/>
+	<Version value = "v1.1.1"/>
 	<DefaultModule value="false"/>	
 	<SingleplayerModule value="true"/>
   <Official value="false" />

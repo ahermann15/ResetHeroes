@@ -57,6 +57,7 @@ namespace ResetAndReallocateHeroes
 			InformationManager.DisplayMessage(new InformationMessage(string.Format("(Unallocated: {0} ATR | {1} FOCUS)", hero.HeroDeveloper.UnspentAttributePoints, hero.HeroDeveloper.UnspentFocusPoints)));
 
 			hero.ClearPerks();
+			typeof(HeroDeveloper).GetMethod("DiscoverOpenedPerks", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero.HeroDeveloper, new object[0]);
 		}
 	}
 }
