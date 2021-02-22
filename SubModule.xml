@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-	<Name value = "ResetAndReallocateHeroes"/>
+	<Name value = "Reset And Reallocate Heroes"/>
 	<Id value = "ResetAndReallocateHeroes"/>
-	<Version value = "v1.1.1"/>
+	<Version value = "v1.1.1.1"/>
 	<DefaultModule value="false"/>	
 	<SingleplayerModule value="true"/>
   <Official value="false" />
   <DependedModules>
-		<DependedModule Id="Native"/>
-		<DependedModule Id="SandBoxCore"/>
+		<DependedModule Id="Native" DependentVersion="e1.5.7"/>
+		<DependedModule Id="SandBoxCore" DependentVersion="e1.5.7"/>
+		<DependedModule Id="Sandbox" DependentVersion="e1.5.7"/>
+		<DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.0.4.53"/>		
 	</DependedModules>
 	<SubModules>
 		<SubModule>
