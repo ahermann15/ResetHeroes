@@ -2,7 +2,6 @@
 using Helpers;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 
 namespace ResetAndReallocateHeroes
 {
@@ -17,8 +16,8 @@ namespace ResetAndReallocateHeroes
 
 			HeroHelper.DetermineInitialLevel(hero);
 
-			hero.HeroDeveloper.UnspentAttributePoints = 18;
-			hero.HeroDeveloper.UnspentFocusPoints = 12;
+			hero.HeroDeveloper.UnspentAttributePoints = CalcUnspentAttr(hero.Level);
+			hero.HeroDeveloper.UnspentFocusPoints = CalcUnspentFocus(hero.Level);
 
 			for (CharacterAttributesEnum characterAttributesEnum = CharacterAttributesEnum.Vigor; characterAttributesEnum < CharacterAttributesEnum.NumCharacterAttributes; characterAttributesEnum++)
 			{
@@ -32,32 +31,34 @@ namespace ResetAndReallocateHeroes
 
 		public static void ReallocateHero(Hero hero)
 		{
-			int focusPoints = 0;
-			foreach (SkillObject skill in DefaultSkills.GetAllSkills())
-			{
-				int focus = hero.HeroDeveloper.GetFocus(skill);
-				if (focus > 0)
-				{
-					focusPoints += focus;
-				}
-			
-			}
-			hero.HeroDeveloper.UnspentFocusPoints += MBMath.ClampInt(focusPoints, 0, 999);
+			hero.HeroDeveloper.UnspentFocusPoints = CalcUnspentFocus(hero.Level);
 			typeof(HeroDeveloper).GetMethod("ClearFocuses", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero.HeroDeveloper, new object[0]);
 
-			int attrPoints = 0;
 			for (CharacterAttributesEnum characterAttributesEnum = CharacterAttributesEnum.Vigor; characterAttributesEnum < CharacterAttributesEnum.NumCharacterAttributes; characterAttributesEnum++)
 			{
-				int attributeValue = hero.GetAttributeValue(characterAttributesEnum);
-				attrPoints += attributeValue;
 				hero.SetAttributeValue(characterAttributesEnum, 0);
 			}
-			hero.HeroDeveloper.UnspentAttributePoints += MBMath.ClampInt(attrPoints, 0, 999);
+
+			hero.HeroDeveloper.UnspentAttributePoints = CalcUnspentAttr(hero.Level);
 			InformationManager.DisplayMessage(new InformationMessage(string.Format("{0} (Level {1}) is ready for reallocation", hero.Name,hero.Level)));
 			InformationManager.DisplayMessage(new InformationMessage(string.Format("(Unallocated: {0} ATR | {1} FOCUS)", hero.HeroDeveloper.UnspentAttributePoints, hero.HeroDeveloper.UnspentFocusPoints)));
 
 			hero.ClearPerks();
 			typeof(HeroDeveloper).GetMethod("DiscoverOpenedPerks", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero.HeroDeveloper, new object[0]);
+		}
+
+
+
+		private static int CalcUnspentAttr(int lvl)
+		{
+			return 18 + (int)(lvl / Ref_DefaultCharacterDevelopmentModel.LvlPerAttr);
+		}
+
+
+
+		private static int CalcUnspentFocus(int lvl)
+		{
+			return 12 + ( (lvl - 1) * Ref_DefaultCharacterDevelopmentModel.FocusPerLvl);
 		}
 	}
 }

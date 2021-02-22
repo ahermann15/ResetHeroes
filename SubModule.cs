@@ -1,4 +1,5 @@
-﻿using TaleWorlds.MountAndBlade;
+﻿using HarmonyLib;
+using TaleWorlds.MountAndBlade;
 
 namespace ResetAndReallocateHeroes
 {
@@ -6,6 +7,9 @@ namespace ResetAndReallocateHeroes
     {
         protected override void OnSubModuleLoad()
         {
+            base.OnSubModuleLoad();
+            Harmony harmony = new Harmony("ResetAndReallocateHeroes");
+            harmony.PatchAll();
 
         }
     }
