@@ -19,10 +19,12 @@ namespace ResetAndReallocateHeroes
 			hero.HeroDeveloper.UnspentAttributePoints = CalcUnspentAttr(hero.Level);
 			hero.HeroDeveloper.UnspentFocusPoints = CalcUnspentFocus(hero.Level);
 
-			for (CharacterAttributesEnum characterAttributesEnum = CharacterAttributesEnum.Vigor; characterAttributesEnum < CharacterAttributesEnum.NumCharacterAttributes; characterAttributesEnum++)
-			{
-				hero.SetAttributeValue(characterAttributesEnum, 0);
-			}
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Vigor, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Control, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Endurance, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Cunning, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Social, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Intelligence, 0 });
 
 			InformationManager.DisplayMessage(new InformationMessage(string.Format("Reset {0}", hero)));
 		}
@@ -34,10 +36,12 @@ namespace ResetAndReallocateHeroes
 			hero.HeroDeveloper.UnspentFocusPoints = CalcUnspentFocus(hero.Level);
 			typeof(HeroDeveloper).GetMethod("ClearFocuses", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero.HeroDeveloper, new object[0]);
 
-			for (CharacterAttributesEnum characterAttributesEnum = CharacterAttributesEnum.Vigor; characterAttributesEnum < CharacterAttributesEnum.NumCharacterAttributes; characterAttributesEnum++)
-			{
-				hero.SetAttributeValue(characterAttributesEnum, 0);
-			}
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Vigor, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Control, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Endurance, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Cunning, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Social, 0 });
+			typeof(Hero).GetMethod("SetAttributeValueInternal", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(hero, new object[] { DefaultCharacterAttributes.Intelligence, 0 });
 
 			hero.HeroDeveloper.UnspentAttributePoints = CalcUnspentAttr(hero.Level);
 			InformationManager.DisplayMessage(new InformationMessage(string.Format("{0} (Level {1}) is ready for reallocation", hero.Name,hero.Level)));
